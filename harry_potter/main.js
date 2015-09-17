@@ -4,7 +4,7 @@ var Pos = require('./pos.js');
 var AllBooks = require('./all-books.js');
 var BasketItem = require('./basket-Item.js');
 
-var inputs = ['1-1', '2-3'];
+var inputs = ['1-1', '2-3','1-4'];
 var allBooks = new AllBooks();
 
 var allHarryPotters = allBooks.loadAllBooks();

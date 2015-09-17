@@ -1,32 +1,28 @@
-var allHarryPotters = [];
+var allHarryPottersBooks = [];
 
-function BasketItem(bookId,count) {
+function BasketItem(bookId, count) {
   this.bookId = bookId;
   this.count = count;
 }
 
 BasketItem.getAllBooks = function(allHarryPotters) {
-  allHarryPotters = allHarryPotters;
+  allHarryPotterBooks = allHarryPotters;
 };
 
-BasketItem.prototype._getItem = function() {
-  if (this._item) { // 缓存技术，第一次没有_item的时候创建一个，如果有了直接返回不用每次创建。
-    return this._item;
-  } else {
-    var that = this;
-    var item;
-    allHarryPotters.forEach(function(val) {
-      if (val.bookId === that.bookId) {
-        item = val;
-      }
-    });
-    return item;
-  }
+BasketItem.prototype.getItem = function() {
+  var that = this;
+  var tempBookItem = {};
+  allHarryPotterBooks.forEach(function(val) {
+    if (val.bookId === that.bookId) {
+      tempBookItem = val;
+    }
+  });
+  return tempBookItem;
 };
 
 BasketItem.prototype.getName = function() {
-  var item = this._getItem();
-  return item.bookName;
+  var bookItem = this.getItem();
+  return bookItem.bookName;
 };
 
 module.exports = BasketItem;
