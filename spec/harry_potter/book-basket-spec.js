@@ -13,9 +13,9 @@ describe('BookBasket',function() {
   describe('addBook',function() {
     it('if a book is not in basketItems the function should add it in',function() {
       bookBasket.addBook('1',2);
+      expect(bookBasket.basketItems.length).toBe(1);
       expect(bookBasket.basketItems[0].bookId).toBe('1');
       expect(bookBasket.basketItems[0].count).toBe(2);
-      expect(bookBasket.basketItems.length).toBe(1);
 
       bookBasket.addBook('2',3);
       expect(bookBasket.basketItems.length).toBe(2);

@@ -24,5 +24,4 @@ BasketItem.prototype.getName = function() {
   var bookItem = this.getItem();
   return bookItem.bookName;
 };
-
 module.exports = BasketItem;
