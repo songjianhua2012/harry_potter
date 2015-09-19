@@ -1,6 +1,8 @@
 var BasketItem = require('./basket-Item.js');
 var Discount = require('./discount.js');
 
+var discountWays = [];
+
 function BookBasket() {
   this.basketItems = [];
 }
@@ -18,9 +20,11 @@ BookBasket.prototype.addBook = function(bookId, count) {
   }
 };
 
+BookBasket.getDiscountMothods = function(mothods) {
+  discountWays = mothods;
+};
+
 BookBasket.prototype.getRealMoney = function() {
-  var discount = new Discount();
-  var discountWays = discount.discountMothods();
   this.basketItems.sort(function(n1,n2) {
     return -n1.count+n2.count;
   });
